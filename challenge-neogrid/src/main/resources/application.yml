@@ -1,0 +1,14 @@
+challenge:
+  storage:
+    local:
+      directory-input: /home/divino/neogrid/input
+      directory-output: /home/divino/neogrid/output
+  period:
+    afternoon:
+      begin: '13:00'
+      labor-gym-min: '16:00'
+      labor-gym-max: '17:00'
+    morning:
+      begin: '09:00'
+      finish: '12:00'
+       

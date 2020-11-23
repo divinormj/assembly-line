@@ -1,0 +1,6 @@
+challenge:
+  storage:
+    local:
+      directory-input: /home/divino/neogrid-test/input
+      directory-output: /home/divino/neogrid-test/output
+       

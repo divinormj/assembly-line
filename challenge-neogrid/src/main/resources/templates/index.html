@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Linha de montagem</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <h2>Resultado do processamento - Linhas de montagem</h2>
+            </div>
+        </div>
+        <div class="row">
+	        <div class="col-md-6 mx-auto">	        	
+	        	<div>
+	        		<label>Arquivo de entrada:</label>
+	            	<span th:text="${input.name}" />
+	            </div>	
+	            <div class="alert alert-primary">
+		            <table>
+			            <tr th:each="title : ${titles}">
+		                    <td th:text="${title}"></td>
+		                </tr>
+			        </table>
+			    </div>            
+	        </div>
+	        
+	        <div class="col-md-6 mx-auto">
+	        	<div>
+		        	<label>Arquivo de saída:</label>
+		            <span th:text="${output.name}" />
+	            </div>
+	            <p th:text="${messageError}" th:if="${messageError ne null}" class="alert alert-primary"></p>
+	            <div class="alert alert-primary" th:each="assemblyLine : ${assemblyLines}">
+	            	<strong th:text="${assemblyLine.description}" ></strong>
+	            	<table>
+			            <tr th:each="step : ${assemblyLine.steps}">
+			            	<td th:text="${step.time}"></td>
+		                    <td th:text="${step.title}"></td>
+		                </tr>
+			        </table>
+			    </div>
+	        </div>
+       </div>
+    </div>
+</section>
+
+</body>
+</html>
